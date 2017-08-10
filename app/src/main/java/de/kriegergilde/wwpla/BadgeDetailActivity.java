@@ -9,6 +9,10 @@ import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
+import android.widget.CheckBox;
+import android.widget.Toast;
+
+import de.kriegergilde.wwpla.dummy.DummyContent;
 
 /**
  * An activity representing a single Badge detail screen. This
@@ -32,6 +36,20 @@ public class BadgeDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own detail action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
+        checkBox.setChecked(DummyContent.possessions.contains(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID)));
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkBox.isChecked()){
+                    DummyContent.possessions.add(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID));
+                } else {
+                    DummyContent.possessions.remove(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID));
+                }
+                DummyContent.savePossessions(BadgeDetailActivity.this);
             }
         });
 

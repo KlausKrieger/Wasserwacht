@@ -1,9 +1,14 @@
 package de.kriegergilde.wwpla.dummy;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import de.kriegergilde.wwpla.R;
 
@@ -24,6 +29,8 @@ public class DummyContent {
      * A map of sample (dummy) items, by ID.
      */
     public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+
+    public static Set<String> possessions = new HashSet<>();
 
     static {
         // Add some sample items.
@@ -449,6 +456,20 @@ public class DummyContent {
             builder.append("\nMore details information here.");
         }
         return builder.toString();
+    }
+
+    public static void savePossessions(Context ctx){
+        SharedPreferences sharedPref = ctx.getSharedPreferences(
+                "possessions_file", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putStringSet("possessions", possessions);
+        editor.commit();
+    }
+
+    public static void loadPossessions(Context ctx){
+        SharedPreferences sharedPref = ctx.getSharedPreferences(
+                "possessions_file", Context.MODE_PRIVATE);
+        possessions = sharedPref.getStringSet("possessions", new HashSet<String>());
     }
 
     /**
