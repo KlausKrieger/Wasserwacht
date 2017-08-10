@@ -462,6 +462,7 @@ public class DummyContent {
         SharedPreferences sharedPref = ctx.getSharedPreferences(
                 "possessions_file", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
+        editor.clear();
         editor.putStringSet("possessions", possessions);
         editor.commit();
     }

@@ -29,6 +29,8 @@ public class BadgeDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
 
+        DummyContent.loadPossessions(this);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.GONE); // TODO
         fab.setOnClickListener(new View.OnClickListener() {
