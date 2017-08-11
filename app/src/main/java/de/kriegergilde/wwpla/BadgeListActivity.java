@@ -12,13 +12,20 @@ import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
 import de.kriegergilde.wwpla.dummy.DummyContent;
 
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * An activity representing a list of Badges. This activity
@@ -28,7 +35,7 @@ import java.util.List;
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-public class BadgeListActivity extends AppCompatActivity {
+public class BadgeListActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -57,6 +64,13 @@ public class BadgeListActivity extends AppCompatActivity {
             }
         });
 
+        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,new String[]{"Alle Abzeichen anzeigen", "erworbene Abzeichen anzeigen", "nicht erworbene Abzeichen anzeigen"});
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
         View recyclerView = findViewById(R.id.badge_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
@@ -70,8 +84,49 @@ public class BadgeListActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        View recyclerView = findViewById(R.id.badge_list);
+        assert recyclerView != null;
+        setupRecyclerView((RecyclerView) recyclerView);
+    }
+
+
+    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+        View recyclerView = findViewById(R.id.badge_list);
+        assert recyclerView != null;
+        setupRecyclerView((RecyclerView) recyclerView);
+    }
+    public void onNothingSelected(AdapterView<?> parent){
+        // TODO ?
+    }
+
+
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(DummyContent.ITEMS));
+        int spinnerPosition = ((Spinner)findViewById(R.id.spinner)).getSelectedItemPosition();
+        List<DummyContent.DummyItem> badgesToShow = new LinkedList<>();
+        switch (spinnerPosition) {
+            case 0: // all
+                badgesToShow = DummyContent.ITEMS;
+                break;
+            case 1: // owned
+                for(DummyContent.DummyItem badge : DummyContent.ITEMS){
+                    if(DummyContent.possessions.contains(badge.id)){
+                        badgesToShow.add(badge);
+                    }
+                }
+                break;
+            case 2: // open badges
+                for(DummyContent.DummyItem badge : DummyContent.ITEMS){
+                    if(!DummyContent.possessions.contains(badge.id)){
+                        badgesToShow.add(badge);
+                    }
+                }
+                break;
+        }
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(badgesToShow));
     }
 
     public class SimpleItemRecyclerViewAdapter

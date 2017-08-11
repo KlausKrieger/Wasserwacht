@@ -273,13 +273,13 @@ public class DummyContent {
                         "Sie waren sehr begehrt, werden aber seit Beginn der 1970er Jahre nur noch selten abgenommen"));
         addItem(new DummyItem("totenkopf_090", R.drawable.totenkopf_090, "Stundenschwimmer 'Totenkopf' in Silber",
                 "Leistungen:\n" +
-                        "1 Stunde schwimmen ohne Pause (ohne sich am Beckenrand festzuhalten).\n" +
+                        "90 Minuten schwimmen ohne Pause (ohne sich am Beckenrand festzuhalten).\n" +
                         "\nAnmerkung:\n" +
                         "Die 'Totenkopfschwimmer' gehören nicht (mehr) zu den offiziellen Schwimmabzeichen der Deutschen Prüfungsordnung Schwimmen/Rettungsschwimmen. " +
                         "Sie waren sehr begehrt, werden aber seit Beginn der 1970er Jahre nur noch selten abgenommen"));
         addItem(new DummyItem("totenkopf_120", R.drawable.totenkopf_120, "Stundenschwimmer 'Totenkopf' in Gold",
                 "Leistungen:\n" +
-                        "1 Stunde schwimmen ohne Pause (ohne sich am Beckenrand festzuhalten).\n" +
+                        "2 Stunden schwimmen ohne Pause (ohne sich am Beckenrand festzuhalten).\n" +
                         "\nAnmerkung:\n" +
                         "Die 'Totenkopfschwimmer' gehören nicht (mehr) zu den offiziellen Schwimmabzeichen der Deutschen Prüfungsordnung Schwimmen/Rettungsschwimmen. " +
                         "Sie waren sehr begehrt, werden aber seit Beginn der 1970er Jahre nur noch selten abgenommen"));
