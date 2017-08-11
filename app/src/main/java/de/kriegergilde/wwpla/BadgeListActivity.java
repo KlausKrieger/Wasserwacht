@@ -66,7 +66,7 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
 
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,new String[]{"Alle Abzeichen anzeigen", "erworbene Abzeichen anzeigen", "nicht erworbene Abzeichen anzeigen"});
+                android.R.layout.simple_spinner_item,new String[]{"Filter: Alle Abzeichen", "Filter: nur erworbene Abzeichen", "Filter: nur nicht erworbene Abzeichen"});
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
