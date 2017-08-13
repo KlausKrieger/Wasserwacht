@@ -19,13 +19,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
-import de.kriegergilde.wwpla.dummy.DummyContent;
+import de.kriegergilde.wwpla.dummy.Ausbildungen;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * An activity representing a list of Badges. This activity
@@ -48,7 +45,7 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_badge_list);
 
-        DummyContent.loadPossessions(this);
+        Ausbildungen.loadPossessions(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -106,21 +103,21 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         int spinnerPosition = ((Spinner)findViewById(R.id.spinner)).getSelectedItemPosition();
-        List<DummyContent.DummyItem> badgesToShow = new LinkedList<>();
+        List<Ausbildungen.Badge> badgesToShow = new LinkedList<>();
         switch (spinnerPosition) {
             case 0: // all
-                badgesToShow = DummyContent.ITEMS;
+                badgesToShow = Ausbildungen.ITEMS;
                 break;
             case 1: // owned
-                for(DummyContent.DummyItem badge : DummyContent.ITEMS){
-                    if(DummyContent.possessions.contains(badge.id)){
+                for(Ausbildungen.Badge badge : Ausbildungen.ITEMS){
+                    if(Ausbildungen.possessions.contains(badge.id)){
                         badgesToShow.add(badge);
                     }
                 }
                 break;
             case 2: // open badges
-                for(DummyContent.DummyItem badge : DummyContent.ITEMS){
-                    if(!DummyContent.possessions.contains(badge.id)){
+                for(Ausbildungen.Badge badge : Ausbildungen.ITEMS){
+                    if(!Ausbildungen.possessions.contains(badge.id)){
                         badgesToShow.add(badge);
                     }
                 }
@@ -132,9 +129,9 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<DummyContent.DummyItem> mValues;
+        private final List<Ausbildungen.Badge> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<DummyContent.DummyItem> items) {
+        public SimpleItemRecyclerViewAdapter(List<Ausbildungen.Badge> items) {
             mValues = items;
         }
 
@@ -182,7 +179,7 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
             public final View mView;
             public final ImageView mImageView;
             public final TextView mContentView;
-            public DummyContent.DummyItem mItem;
+            public Ausbildungen.Badge mItem;
 
             public ViewHolder(View view) {
                 super(view);

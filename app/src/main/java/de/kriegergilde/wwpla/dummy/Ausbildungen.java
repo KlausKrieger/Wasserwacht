@@ -13,50 +13,48 @@ import java.util.Set;
 import de.kriegergilde.wwpla.R;
 
 /**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- * <p>
- * TODO: Replace all uses of this class before publishing your app.
+ * Helper class for providing badges
  */
-public class DummyContent {
+public class Ausbildungen {
 
     /**
-     * An array of sample (dummy) items.
+     * An array of all badges.
      */
-    public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
+    public static final List<Badge> ITEMS = new ArrayList<Badge>();
 
     /**
-     * A map of sample (dummy) items, by ID.
+     * A map of badges, by ID.
      */
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+    public static final Map<String, Badge> ITEM_MAP = new HashMap<String, Badge>();
 
+    // stores ids
     public static Set<String> possessions = new HashSet<>();
 
     static {
-        // Add some sample items.
-        addItem(new DummyItem("seepferdchen", R.drawable.seepferdchen, "Frühschwimmer (Seepferdchen)",
+        // Add the badges
+        addItem(new Badge("seepferdchen", R.drawable.seepferdchen, "Frühschwimmer (Seepferdchen)",
                 "Leistungen:\n" +
                         "* Sprung vom Beckenrand und 25 m Schwimmen.\n" +
                         "* Heraufholen eines Gegenstandes mit den Händen aus schultertiefem Wasser. (Schultertiefe bezogen auf den Prüfling.)"));
-        addItem(new DummyItem("seeraeuber", R.drawable.seeraeuber, "Seeräuber",
+        addItem(new Badge("seeraeuber", R.drawable.seeraeuber, "Seeräuber",
                 "Leistungen:\n" +
                         "* 100 m technikgerechtes Schwimmen, \n" +
                         "* 5 m Streckentauchen mit anschließendem Herausholen eines Gegenstandes aus mindestens 1 Meter Wassertiefe."));
 
-        addItem(new DummyItem("djsa_bronze", R.drawable.djsa_bronze, "Jugendschwimmabzeichen in Bronze - Freischwimmer",
+        addItem(new Badge("djsa_bronze", R.drawable.djsa_bronze, "Jugendschwimmabzeichen in Bronze - Freischwimmer",
                 "Leistungen:\n" +
                         "* Sprung vom Beckenrand und mindestens 200 Meter Schwimmen in höchstens 15 Minuten,\n" +
                         "* einmal ca. 2 Meter Tieftauchen von der Wasseroberfläche und Heraufholen eines Gegenstandes,\n" +
                         "* Sprung aus 1 Meter Höhe oder Startsprung,\n" +
                         "* Kenntnis der Baderegeln"));
-        addItem(new DummyItem("djsa_silber", R.drawable.djsa_silber, "Jugendschwimmabzeichen in Silber",
+        addItem(new Badge("djsa_silber", R.drawable.djsa_silber, "Jugendschwimmabzeichen in Silber",
                 "Leistungen:\n" +
                         "* Startsprung und mindestens 400 Meter Schwimmen in höchstens 25 Minuten (300 Meter Bauch- und 100 Meter Rückenlage),\n" +
                         "* zweimal ca. 2 Meter Tieftauchen von der Wasseroberfläche mit Heraufholen je eines Gegenstandes,\n" +
                         "* Sprung aus 3 Meter Höhe,\n" +
                         "* 10 Meter Streckentauchen (ohne Schwimmbrille),\n" +
                         "* Kenntnis von Baderegeln und der Selbstrettung"));
-        addItem(new DummyItem("djsa_gold", R.drawable.djsa_gold, "Jugendschwimmabzeichen in Gold",
+        addItem(new Badge("djsa_gold", R.drawable.djsa_gold, "Jugendschwimmabzeichen in Gold",
                 "Leistungen:\n" +
                         "* 600 Meter Schwimmen in höchstens 24 Minuten,\n" +
                         "* 50 Meter Brustschwimmen in höchstens 70 Sekunden,\n" +
@@ -69,7 +67,7 @@ public class DummyContent {
                         "* Kenntnis der Baderegeln,\n" +
                         "* Kenntnis über Hilfe bei Bade-, Boots- und Eisunfällen (Selbstrettung und einfache Fremdrettung)"));
 
-        addItem(new DummyItem("schnorchel_ww", R.drawable.schnorchel_ww, "Schnorchelabzeichen (Wasserwacht)",
+        addItem(new Badge("schnorchel_ww", R.drawable.schnorchel_ww, "Schnorchelabzeichen (Wasserwacht)",
                 "Voraussetzungen:\n" +
                         "* Mindestalter 9 Jahre\n" +
                         "* Deutsches Jugenschwimmabzeichen Silber\n" +
@@ -88,14 +86,14 @@ public class DummyContent {
 
 
 
-        addItem(new DummyItem("dsa_bronze", R.drawable.schwimm_bronze, "Schwimmabzeichen in Bronze - Freischwimmer",
+        addItem(new Badge("dsa_bronze", R.drawable.schwimm_bronze, "Schwimmabzeichen in Bronze - Freischwimmer",
                 "Mindestalter: 18 Jahre. \n\nLeistungen:\n" +
                         "* Sprung vom Beckenrand und mindestens 200 Meter Schwimmen in höchstens 7 Minuten\n" +
                         "* Kenntnis der Baderegeln" +
                         "\n\nAltersdifferenzierung:\n" +
                         "Bei den Schwimmbedingungen für den Deutschen Schwimmpass werden die Höchstzeiten je Lebensdekade erhöht – (erstmals mit dem vollendeten 30. Lebensjahr)\n" +
                         "* um eine Minute beim 200 m Schwimmen für das Deutsche Schwimmabzeichen Bronze"));
-        addItem(new DummyItem("dsa_silber", R.drawable.schwimm_silber, "Schwimmabzeichen in Silber",
+        addItem(new Badge("dsa_silber", R.drawable.schwimm_silber, "Schwimmabzeichen in Silber",
                 "Mindestalter: 18 Jahre. \n\nLeistungen:\n" +
                         "* Sprung vom Beckenrand und mindestens 400 Meter Schwimmen in höchstens 12 Minuten\n" +
                         "* zweimal ca. 2 Meter Tieftauchen von der Wasseroberfläche mit Heraufholen je eines Gegenstandes\n" +
@@ -105,7 +103,7 @@ public class DummyContent {
                         "\n\nAltersdifferenzierung:\n" +
                         "Bei den Schwimmbedingungen für den Deutschen Schwimmpass werden die Höchstzeiten je Lebensdekade erhöht – (erstmals mit dem vollendeten 30. Lebensjahr)\n" +
                         "* um eine Minute beim 400 m Schwimmen für das Deutsche Schwimmabzeichen Silber\n"));
-        addItem(new DummyItem("dsa_gold", R.drawable.schwimm_gold, "Schwimmabzeichen in Gold",
+        addItem(new Badge("dsa_gold", R.drawable.schwimm_gold, "Schwimmabzeichen in Gold",
                 "Mindestalter: 18 Jahre. \n\nLeistungen:\n" +
                         "* 1000 m Schwimmen in höchstens 24 Minuten für Männer und 29 Minuten für Frauen\n" +
                         "* 100 Meter Schwimmen in höchstens 1:50 Minuten für Männer und 2:00 Minuten für Frauen\n" +
@@ -122,7 +120,7 @@ public class DummyContent {
                         "* um 10 Sekunden beim 100 m Schwimmen für das Deutsche Schwimmabzeichen Gold."));
 
 
-        addItem(new DummyItem("ersthelfer", R.drawable.ersthelfer, "Ersthelfer",
+        addItem(new Badge("ersthelfer", R.drawable.ersthelfer, "Ersthelfer",
                 "Der Teilnehmer kann nach der Absolvierung als Sofort- / Ersthelfer an einer Unfallstelle handeln: \n" +
                         "In diesem Lehrgang kann jeder die Maßnahmen zur Erstversorgung von vital bedrohten Betroffenen erlernen. " +
                         "Mit dem hier erworbenen Wissen ist man für nahezu alle Notfälle, " +
@@ -136,7 +134,7 @@ public class DummyContent {
 
 
 
-        addItem(new DummyItem("rettungsschwimmer_bronze_ww", R.drawable.rettungsschwimmer_bronze_ww, "Rettungsschwimmabzeichen in Bronze",
+        addItem(new Badge("rettungsschwimmer_bronze_ww", R.drawable.rettungsschwimmer_bronze_ww, "Rettungsschwimmabzeichen in Bronze",
                 "Allgemeines:\n" +
                         "Das Deutsche Rettungsschwimmabzeichen (auch Rettungsschwimmpass) ist ein durch den Arbeiter-Samariter-Bund (ASB), " +
                         "die Deutsche Lebens-Rettungs-Gesellschaft (DLRG) oder durch die Wasserwacht " +
@@ -172,7 +170,7 @@ public class DummyContent {
                         "** Atmung und Blutkreislauf\n" +
                         "** Hilfe bei Verletzungen und Ertrinkungsunfällen, Hitze- und Kälteschäden\n" +
                         "** Aufgaben der ausbildenden Wasserrettungsorganisationen"));
-        addItem(new DummyItem("rettungsschwimmer_silber_ww", R.drawable.rettungsschwimmer_silber_ww, "Rettungsschwimmabzeichen in Silber",
+        addItem(new Badge("rettungsschwimmer_silber_ww", R.drawable.rettungsschwimmer_silber_ww, "Rettungsschwimmabzeichen in Silber",
                 "Allgemeines:\n" +
                         "Das Deutsche Rettungsschwimmabzeichen (auch Rettungsschwimmpass) " +
                         "ist ein durch den Arbeiter-Samariter-Bund (ASB), die Deutsche Lebens-Rettungs-Gesellschaft (DLRG) " +
@@ -218,7 +216,7 @@ public class DummyContent {
                         "** Rechte und Pflichten bei Hilfeleistungen\n" +
                         "** Rettungsgeräte\n" +
                         "** Aufgaben und Tätigkeiten der ausbildenden Wasserrettungsorganisationen\n"));
-        addItem(new DummyItem("rettungsschwimmer_gold_ww", R.drawable.rettungsschwimmer_gold_ww, "Rettungsschwimmabzeichen in Gold",
+        addItem(new Badge("rettungsschwimmer_gold_ww", R.drawable.rettungsschwimmer_gold_ww, "Rettungsschwimmabzeichen in Gold",
                 "Allgemeines:\n" +
                         "Das Deutsche Rettungsschwimmabzeichen (auch Rettungsschwimmpass) ist ein durch den Arbeiter-Samariter-Bund (ASB), " +
                         "die Deutsche Lebens-Rettungs-Gesellschaft (DLRG) oder durch die Wasserwacht im Deutschen Roten Kreuz (DRK) " +
@@ -265,19 +263,19 @@ public class DummyContent {
                         "** Die Wasserrettungsorganisationen: Organisation, Aufgaben unter besonderer Berücksichtigung des Wasserrettungsdienstes\n"));
 
 
-        addItem(new DummyItem("totenkopf_060", R.drawable.totenkopf_060, "Stundenschwimmer 'Totenkopf' in Schwarz",
+        addItem(new Badge("totenkopf_060", R.drawable.totenkopf_060, "Stundenschwimmer 'Totenkopf' in Schwarz",
                 "Leistungen:\n" +
                         "1 Stunde schwimmen ohne Pause (ohne sich am Beckenrand festzuhalten).\n" +
                         "\nAnmerkung:\n" +
                         "Die 'Totenkopfschwimmer' gehören nicht (mehr) zu den offiziellen Schwimmabzeichen der Deutschen Prüfungsordnung Schwimmen/Rettungsschwimmen. " +
                         "Sie waren sehr begehrt, werden aber seit Beginn der 1970er Jahre nur noch selten abgenommen"));
-        addItem(new DummyItem("totenkopf_090", R.drawable.totenkopf_090, "Stundenschwimmer 'Totenkopf' in Silber",
+        addItem(new Badge("totenkopf_090", R.drawable.totenkopf_090, "Stundenschwimmer 'Totenkopf' in Silber",
                 "Leistungen:\n" +
                         "90 Minuten schwimmen ohne Pause (ohne sich am Beckenrand festzuhalten).\n" +
                         "\nAnmerkung:\n" +
                         "Die 'Totenkopfschwimmer' gehören nicht (mehr) zu den offiziellen Schwimmabzeichen der Deutschen Prüfungsordnung Schwimmen/Rettungsschwimmen. " +
                         "Sie waren sehr begehrt, werden aber seit Beginn der 1970er Jahre nur noch selten abgenommen"));
-        addItem(new DummyItem("totenkopf_120", R.drawable.totenkopf_120, "Stundenschwimmer 'Totenkopf' in Gold",
+        addItem(new Badge("totenkopf_120", R.drawable.totenkopf_120, "Stundenschwimmer 'Totenkopf' in Gold",
                 "Leistungen:\n" +
                         "2 Stunden schwimmen ohne Pause (ohne sich am Beckenrand festzuhalten).\n" +
                         "\nAnmerkung:\n" +
@@ -286,12 +284,12 @@ public class DummyContent {
 
 
 
-        addItem(new DummyItem("schwimmen", R.drawable.schwimmen, "Fachdienst Schwimmen",
+        addItem(new Badge("schwimmen", R.drawable.schwimmen, "Fachdienst Schwimmen",
                 "Ärmelabzeichen an der Dienstuniform für Mitglieder das Fachdienstes Schwimmen."));
 
 
 
-        addItem(new DummyItem("san", R.drawable.san_b, "Sanitäter",
+        addItem(new Badge("san", R.drawable.san_b, "Sanitäter",
                 "Inhalte:\n" +
                         "- Definition Notfall\n" +
                         "- Bewusstlosigkeit\n" +
@@ -311,7 +309,7 @@ public class DummyContent {
                         "Dauer:\n" +
                         "55 Unterrichtseinheiten"));
 
-        addItem(new DummyItem("rettungssschwimmen", R.drawable.rettungsschwimmen, "Fachdienst Rettungsschwimmen",
+        addItem(new Badge("rettungssschwimmen", R.drawable.rettungsschwimmen, "Fachdienst Rettungsschwimmen",
                 "Als Ärmelabzeichen an der Dienstuniform: \n" +
                         "Mitglied des Fachdienstes 'Rettungsschwimmen'.\n" +
                         "\nAls Kennzeichnung an der Einsatzkleidung: \n" +
@@ -322,7 +320,7 @@ public class DummyContent {
                         "\nDiese Ausbildungsstufe ist Mindestvoraussetzung zur Teilnahme innerhalb der Schnelleinsatzgruppe (SEG).\n" +
                         "Die nächste Weiterbildungsstufe ist die zum Wasserretter."));
 
-        addItem(new DummyItem("WR", R.drawable.wr, "Wasserretter",
+        addItem(new Badge("WR", R.drawable.wr, "Wasserretter",
                 "Beschreibung:\n" +
                         "\n" +
                         "Die besonderen Anforderungen im Wasserrettungsdienst machen es notwendig, " +
@@ -355,28 +353,28 @@ public class DummyContent {
 
 
 
-        addItem(new DummyItem("bootsmann", R.drawable.bootsmann, "Bootsmann",
+        addItem(new Badge("bootsmann", R.drawable.bootsmann, "Bootsmann",
                 "Ärmelabzeichen an der Dienstuniform: \n" +
                         "(einfaches) Mitglied der Bootsbesatzung'.\n"));
-        addItem(new DummyItem("motorboot", R.drawable.motorboot, "Motorbootführer",
+        addItem(new Badge("motorboot", R.drawable.motorboot, "Motorbootführer",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Motorbootführer.\n" +
                         "\nVoraussetzung für die Ausbildung zum Motorbootführer: \n" +
                         "abgeschlossene Ausbildung zum Wasserretter."));
-        addItem(new DummyItem("tauchen", R.drawable.tauchen, "Rettungstaucher",
+        addItem(new Badge("tauchen", R.drawable.tauchen, "Rettungstaucher",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Rettungstaucher.\n" +
                         "\nVoraussetzung für die Ausbildung zum Rettungstaucher: \n" +
                         "* abgeschlossene Ausbildung zum Wasserretter.\n" +
                         "* entsprechend bescheinigte ärztliche Tauglichkeit\n"));
-        addItem(new DummyItem("naturschutz", R.drawable.naturschutz, "Fachdienst Naturschutz (Streifenführer)",
+        addItem(new Badge("naturschutz", R.drawable.naturschutz, "Fachdienst Naturschutz (Streifenführer)",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Mitglied des Fachdienstes 'Naturschutz'. (Konkret: Streifenführer.)"));
 
 
 
 
-        addItem(new DummyItem("rettungshelfer", R.drawable.rettungshelfer, "Rettungshelfer",
+        addItem(new Badge("rettungshelfer", R.drawable.rettungshelfer, "Rettungshelfer",
                 "Beschreibung:\n" +
                         "Die Ausbildung zum Rettungshelfer stellt die Mindestqualifikation für die (ehrenamtliche oder berufliche) " +
                         "Mitarbeit im Rettungsdienst und Krankentransport dar.\n" +
@@ -392,7 +390,7 @@ public class DummyContent {
                         "* ehrenamtliche Mitarbeiter der Rettungsdienste\n" +
                         "* Personen, die ein freiwilliges soziales Jahr oder den Bundesfreiwilligendienst im Rettungsdienst absolvieren\n" +
                         "* Privatpersonen ab dem 17. Lebensjahr"));
-        addItem(new DummyItem("rettungssanitaeter", R.drawable.rettungssanitaeter, "Rettungssanitäter",
+        addItem(new Badge("rettungssanitaeter", R.drawable.rettungssanitaeter, "Rettungssanitäter",
                 "Die Ausbildung zum Rettungssanitäter schließt sich der zum Rettungshelfer an. " +
                         "Sie steht auch Personen offen, die nebenberuflich/ehrenamtlich im Rettungsdienst arbeiten möchten.\n" +
                         "Der Ausbildungsverlauf gliedert sich in\n" +
@@ -406,43 +404,43 @@ public class DummyContent {
                         "* Rettungswagen als Teammitglied neben einem Rettungsassistenten.\n" +
                         "\nDie Gesamtausbildung zum Rettungssanitäter muss innerhalb von 2 Jahren abgeschlossen sein (inkl. Rettungshelfer)."));
 
-        addItem(new DummyItem("sanitaetsdienst", R.drawable.sanitaetsdienst, "Fachdienst Sanitätswesen",
+        addItem(new Badge("sanitaetsdienst", R.drawable.sanitaetsdienst, "Fachdienst Sanitätswesen",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Mitglied des Fachdienstes 'Sanittsdienst' bzw. Sanitäter.\n" +
                         "\nMindestvoraussetzung: \n" +
                         "* Sanitätsgrundausbildung (A+B)."));
-        addItem(new DummyItem("sanitaetsdienst_ausbilder", R.drawable.sanitaetsdienst_ausbilder, "Sanitätsdienst (Ausbilder)",
+        addItem(new Badge("sanitaetsdienst_ausbilder", R.drawable.sanitaetsdienst_ausbilder, "Sanitätsdienst (Ausbilder)",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Ausbilder im Fachdienste 'Sanitätsdienst'."));
 
-        addItem(new DummyItem("schwimmen_ausbilder", R.drawable.schwimmen_ausbilder, "Fachdienst Schwimmen (Ausbilder)",
+        addItem(new Badge("schwimmen_ausbilder", R.drawable.schwimmen_ausbilder, "Fachdienst Schwimmen (Ausbilder)",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Ausbilder im Fachdienst 'Schwimmen'.\n" +
                         "\nTODO Inhaber Lehrschein S (schwimmen) oder höher? (schon ab Lehrscheininhaber oder erst ab Instruktor/Lehrwart?)"));
 
-        addItem(new DummyItem("rettungsschwimmen_ausbilder", R.drawable.rettungsschwimmen_ausbilder, "Fachdienst Rettungsschwimmen (Ausbilder)",
+        addItem(new Badge("rettungsschwimmen_ausbilder", R.drawable.rettungsschwimmen_ausbilder, "Fachdienst Rettungsschwimmen (Ausbilder)",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Ausbilder im Fachdienst 'Rettungsschwimmen'.\n" +
                         "\nInhaber Lehrschein R (Rettungsschwimmen) oder höher (Instruktor, Lehrwart)."));
 
-        addItem(new DummyItem("WR_A", R.drawable.wasserretter_ausbilder, "Wasserretter (Ausbilder)",
+        addItem(new Badge("WR_A", R.drawable.wasserretter_ausbilder, "Wasserretter (Ausbilder)",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                          "Ausbilder im Fachdienst 'Wasserrettung'.\n"));
 
-        addItem(new DummyItem("motorboot_ausbilder", R.drawable.motorboot_ausbilder, "Motorbootführer (Ausbilder)",
+        addItem(new Badge("motorboot_ausbilder", R.drawable.motorboot_ausbilder, "Motorbootführer (Ausbilder)",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Ausbilder für 'Motorbootführer'.\n"));
 
-        addItem(new DummyItem("tauchen_ausbilder", R.drawable.tauchen_ausbilder, "Rettungstaucher (Ausbilder)",
+        addItem(new Badge("tauchen_ausbilder", R.drawable.tauchen_ausbilder, "Rettungstaucher (Ausbilder)",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Ausbilder für 'Rettungstaucher'.\n"));
 
-        addItem(new DummyItem("naturschutz_ausbilder", R.drawable.naturschutz_ausbilder, "Naturschutz (Ausbilder)",
+        addItem(new Badge("naturschutz_ausbilder", R.drawable.naturschutz_ausbilder, "Naturschutz (Ausbilder)",
                 "Als Ärmelabzeichen an der Dienstuniform oder Abzeichen an der Einsatzkleidung: \n" +
                         "Ausbilder für 'Naturschutz-Streifenführer'.\n"));
     }
 
-    private static void addItem(DummyItem item) {
+    private static void addItem(Badge item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
@@ -474,15 +472,15 @@ public class DummyContent {
     }
 
     /**
-     * A dummy item representing a piece of content.
+     * Eine Ausbildung / ein Abzeichen
      */
-    public static class DummyItem {
+    public static class Badge {
         public final String id;
         public final int resId;
         public final String content;
         public final String details;
 
-        public DummyItem(String id, int resId, String content, String details) {
+        public Badge(String id, int resId, String content, String details) {
             this.id = id;
             this.resId = resId;
             this.content = content;

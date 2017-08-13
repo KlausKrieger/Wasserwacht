@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import de.kriegergilde.wwpla.dummy.DummyContent;
+import de.kriegergilde.wwpla.dummy.Ausbildungen;
 
 /**
  * A fragment representing a single Badge detail screen.
@@ -28,7 +28,7 @@ public class BadgeDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private Ausbildungen.Badge mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -54,7 +54,7 @@ public class BadgeDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = Ausbildungen.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);

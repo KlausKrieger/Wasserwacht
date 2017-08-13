@@ -10,9 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
-import de.kriegergilde.wwpla.dummy.DummyContent;
+import de.kriegergilde.wwpla.dummy.Ausbildungen;
 
 /**
  * An activity representing a single Badge detail screen. This
@@ -29,7 +28,7 @@ public class BadgeDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
 
-        DummyContent.loadPossessions(this);
+        Ausbildungen.loadPossessions(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.GONE); // TODO
@@ -42,16 +41,16 @@ public class BadgeDetailActivity extends AppCompatActivity {
         });
 
         final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
-        checkBox.setChecked(DummyContent.possessions.contains(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID)));
+        checkBox.setChecked(Ausbildungen.possessions.contains(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID)));
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(checkBox.isChecked()){
-                    DummyContent.possessions.add(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID));
+                    Ausbildungen.possessions.add(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID));
                 } else {
-                    DummyContent.possessions.remove(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID));
+                    Ausbildungen.possessions.remove(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID));
                 }
-                DummyContent.savePossessions(BadgeDetailActivity.this);
+                Ausbildungen.savePossessions(BadgeDetailActivity.this);
             }
         });
 
