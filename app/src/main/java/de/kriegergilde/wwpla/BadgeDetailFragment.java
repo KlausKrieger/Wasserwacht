@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,15 +52,13 @@ public class BadgeDetailFragment extends Fragment {
 
     private void refreshTitle() {
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-            // Load the dummy content specified by the fragment
-            // arguments. In a real-world scenario, use a Loader
-            // to load content from a content provider.
+
             mItem = Ausbildungen.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
+                appBarLayout.setTitle(""); // nicht mehr benötigt - liegt im html
             }
         }
     }
@@ -71,7 +70,7 @@ public class BadgeDetailFragment extends Fragment {
 
         // Show the content
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.badge_detail)).setText(mItem.details);
+            ((WebView) rootView.findViewById(R.id.badge_detail)).loadUrl("file:///android_asset/"+mItem.id+".html");
             ((ImageView) this.getActivity().findViewById(R.id.imageView2)).setImageResource(mItem.resId);
         }
 
