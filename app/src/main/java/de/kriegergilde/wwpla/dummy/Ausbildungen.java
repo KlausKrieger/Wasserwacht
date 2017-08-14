@@ -86,6 +86,11 @@ public class Ausbildungen {
         addItem(new Badge("tauchen_ausbilder", R.drawable.tauchen_ausbilder, "Rettungstaucher (Ausbilder)"));
 
         addItem(new Badge("naturschutz_ausbilder", R.drawable.naturschutz_ausbilder, "Naturschutz (Ausbilder)"));
+
+        addItem(new Badge("f1", R.drawable.f1, "Führen im Einsatz I"));
+        addItem(new Badge("f2", R.drawable.f2, "Wachleiter (Führen im Einsatz II)"));
+        addItem(new Badge("f3", R.drawable.f3, "SEG-Leiter (Führen im Einsatz III)"));
+        addItem(new Badge("f4", R.drawable.f4, "Einsatzleiter (Führen im Einsatz IV)"));
     }
 
     private static void addItem(Badge item) {
