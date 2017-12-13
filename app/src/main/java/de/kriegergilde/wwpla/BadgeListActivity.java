@@ -3,6 +3,7 @@ package de.kriegergilde.wwpla;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import de.kriegergilde.wwpla.dummy.Ausbildungen;
@@ -39,6 +41,8 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
      * device.
      */
     private boolean mTwoPane;
+
+    private static Parcelable scrollState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +86,14 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
     }
 
     @Override
+    public void onPause() {
+        // Save scroll state @ onPause
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.badge_list);
+        scrollState = recyclerView.getLayoutManager().onSaveInstanceState();
+        super.onPause();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
 
@@ -90,12 +102,12 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
         setupRecyclerView((RecyclerView) recyclerView);
     }
 
-
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
         View recyclerView = findViewById(R.id.badge_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
     }
+
     public void onNothingSelected(AdapterView<?> parent){
         // TODO ?
     }
@@ -124,6 +136,11 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
                 break;
         }
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(badgesToShow));
+
+
+        // restore scrollPos
+        recyclerView.getLayoutManager().onRestoreInstanceState(scrollState);
+
     }
 
     public class SimpleItemRecyclerViewAdapter
