@@ -25,34 +25,8 @@ public class BadgeDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_badge_detail);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
-        setSupportActionBar(toolbar);
 
         Ausbildungen.loadPossessions(this);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setVisibility(View.GONE); // TODO
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own detail action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
-        checkBox.setChecked(Ausbildungen.possessions.contains(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID)));
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(checkBox.isChecked()){
-                    Ausbildungen.possessions.add(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID));
-                } else {
-                    Ausbildungen.possessions.remove(getIntent().getStringExtra(BadgeDetailFragment.ARG_ITEM_ID));
-                }
-                Ausbildungen.savePossessions(BadgeDetailActivity.this);
-            }
-        });
 
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();

@@ -51,30 +51,16 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
 
         Ausbildungen.loadPossessions(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle(getTitle());
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setVisibility(View.GONE); // TODO
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,new String[]{"Filter: Alle Abzeichen", "Filter: nur erworbene Abzeichen", "Filter: nur nicht erworbene Abzeichen"});
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        View recyclerView = findViewById(R.id.badge_list);
+        RecyclerView recyclerView = findViewById(R.id.badge_list);
         assert recyclerView != null;
-        setupRecyclerView((RecyclerView) recyclerView);
+        setupRecyclerView(recyclerView);
 
         if (findViewById(R.id.badge_detail_container) != null) {
             // The detail container view will be present only in the
@@ -82,6 +68,17 @@ public class BadgeListActivity extends AppCompatActivity implements AdapterView.
             // If this view is present, then the
             // activity should be in two-pane mode.
             mTwoPane = true;
+
+            // rechte Seite vorbelegen mit Seepferdchen
+            if(recyclerView.getAdapter().getItemCount() > 0){
+                Bundle arguments = new Bundle();
+                arguments.putString(BadgeDetailFragment.ARG_ITEM_ID, "seepferdchen");
+                BadgeDetailFragment fragment = new BadgeDetailFragment();
+                fragment.setArguments(arguments);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.badge_detail_container, fragment)
+                        .commit();
+            }
         }
     }
 

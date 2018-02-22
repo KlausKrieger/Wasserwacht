@@ -1,10 +1,32 @@
-<WebView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/badge_detail"
-    style="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:textIsSelectable="true"
-    android:textSize="18sp"
-    tools:context="de.kriegergilde.wwpla.BadgeDetailFragment" />
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageViewDetailBadge"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bootsmann" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="in Besitz" />
+
+    <WebView
+        android:id="@+id/badge_detail_wv"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:textIsSelectable="true"
+        android:textSize="18sp"
+        tools:context="de.kriegergilde.wwpla.BadgeDetailFragment" />
+
+</LinearLayout>

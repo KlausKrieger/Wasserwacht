@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,6 +42,7 @@ public class BadgeDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         refreshTitle();
     }
 
@@ -56,10 +58,7 @@ public class BadgeDetailFragment extends Fragment {
             mItem = Ausbildungen.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
-            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
-            if (appBarLayout != null) {
-                appBarLayout.setTitle(""); // nicht mehr benötigt - liegt im html
-            }
+
         }
     }
 
@@ -68,10 +67,24 @@ public class BadgeDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.badge_detail, container, false);
 
+        final CheckBox checkBox = (CheckBox) rootView.findViewById(R.id.checkBox);
+        checkBox.setChecked(Ausbildungen.possessions.contains(mItem.id));
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkBox.isChecked()){
+                    Ausbildungen.possessions.add(mItem.id);
+                } else {
+                    Ausbildungen.possessions.remove(mItem.id);
+                }
+                Ausbildungen.savePossessions(getActivity());
+            }
+        });
+
         // Show the content
         if (mItem != null) {
-            ((WebView) rootView.findViewById(R.id.badge_detail)).loadUrl("file:///android_asset/"+mItem.id+".html");
-            ((ImageView) this.getActivity().findViewById(R.id.imageView2)).setImageResource(mItem.resId);
+            ((WebView) rootView.findViewById(R.id.badge_detail_wv)).loadUrl("file:///android_asset/"+mItem.id+".html");
+            ((ImageView) rootView.findViewById(R.id.imageViewDetailBadge)).setImageResource(mItem.resId);
         }
 
         return rootView;
