@@ -65,7 +65,7 @@ public class Ausbildungen {
 
         addItem(new Badge("WR", R.drawable.wr, "Wasserretter"));
 
-        addItem(new Badge("bootsmann", R.drawable.bootsmann, "Bootsmann"));
+        //addItem(new Badge("bootsmann", R.drawable.bootsmann, "Bootsmann"));
         addItem(new Badge("motorboot", R.drawable.motorboot, "Motorbootführer"));
         addItem(new Badge("tauchen", R.drawable.tauchen, "Rettungstaucher"));
         addItem(new Badge("naturschutz", R.drawable.naturschutz, "Fachdienst Naturschutz (Streifenführer)"));
