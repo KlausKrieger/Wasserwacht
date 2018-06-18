@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/imageViewDetailBadge"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/bootsmann" />
+        android:layout_height="128dp"
+        android:layout_width="wrap_content"
+        app:srcCompat="@drawable/bootsmann"
+         />
 
     <CheckBox
         android:id="@+id/checkBox"
