@@ -61,31 +61,31 @@ public class Ausbildungen {
 
         addItem(new Badge("sanitaetsdienst", R.drawable.sanitaetsdienst, "Fachdienst Sanitätswesen"));
 
-        addItem(new Badge("rettungssschwimmen", R.drawable.rettungsschwimmen, "Fachdienst Rettungsschwimmen"));
+        addItem(new Badge("rettungssschwimmen", R.drawable.rettungsschwimmen, "Rettungsschwimmer im Wasserrettungsdienst"));
 
         addItem(new Badge("WR", R.drawable.wr, "Wasserretter"));
 
         //addItem(new Badge("bootsmann", R.drawable.bootsmann, "Bootsmann"));
         addItem(new Badge("motorboot", R.drawable.motorboot, "Motorbootführer"));
         addItem(new Badge("tauchen", R.drawable.tauchen, "Rettungstaucher"));
-        addItem(new Badge("naturschutz", R.drawable.naturschutz, "Fachdienst Naturschutz (Streifenführer)"));
+        addItem(new Badge("naturschutz", R.drawable.naturschutz, "Naturschutz-Streifenführer"));
 
         addItem(new Badge("rettungshelfer", R.drawable.rettungshelfer, "Rettungshelfer"));
         addItem(new Badge("rettungssanitaeter", R.drawable.rettungssanitaeter, "Rettungssanitäter"));
 
-        addItem(new Badge("sanitaetsdienst_ausbilder", R.drawable.sanitaetsdienst_ausbilder, "Sanitätsdienst (Ausbilder)"));
+        addItem(new Badge("sanitaetsdienst_ausbilder", R.drawable.sanitaetsdienst_ausbilder, "Ausbilder Sanitätsdienst"));
 
-        addItem(new Badge("schwimmen_ausbilder", R.drawable.schwimmen_ausbilder, "Fachdienst Schwimmen (Ausbilder)"));
+        addItem(new Badge("schwimmen_ausbilder", R.drawable.schwimmen_ausbilder, "Ausbilder Schwimmen"));
 
-        addItem(new Badge("rettungsschwimmen_ausbilder", R.drawable.rettungsschwimmen_ausbilder, "Fachdienst Rettungsschwimmen (Ausbilder)"));
+        addItem(new Badge("rettungsschwimmen_ausbilder", R.drawable.rettungsschwimmen_ausbilder, "Ausbilder Rettungsschwimmen"));
 
-        addItem(new Badge("WR_A", R.drawable.wasserretter_ausbilder, "Wasserretter (Ausbilder)"));
+        addItem(new Badge("WR_A", R.drawable.wasserretter_ausbilder, "Ausbilder Wasserretter"));
 
-        addItem(new Badge("motorboot_ausbilder", R.drawable.motorboot_ausbilder, "Motorbootführer (Ausbilder)"));
+        addItem(new Badge("motorboot_ausbilder", R.drawable.motorboot_ausbilder, "Ausbilder Motorbootführer"));
 
-        addItem(new Badge("tauchen_ausbilder", R.drawable.tauchen_ausbilder, "Rettungstaucher (Ausbilder)"));
+        addItem(new Badge("tauchen_ausbilder", R.drawable.tauchen_ausbilder, "Ausbilder Rettungstaucher"));
 
-        addItem(new Badge("naturschutz_ausbilder", R.drawable.naturschutz_ausbilder, "Naturschutz (Ausbilder)"));
+        addItem(new Badge("naturschutz_ausbilder", R.drawable.naturschutz_ausbilder, "Ausbilder Naturschutz-Streiferführer"));
 
         addItem(new Badge("f1", R.drawable.f1, "Führen im Einsatz I"));
         addItem(new Badge("f2", R.drawable.f2, "Wachleiter (Führen im Einsatz II)"));
