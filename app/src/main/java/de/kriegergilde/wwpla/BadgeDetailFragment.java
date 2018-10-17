@@ -83,7 +83,10 @@ public class BadgeDetailFragment extends Fragment {
 
         // Show the content
         if (mItem != null) {
-            ((WebView) rootView.findViewById(R.id.badge_detail_wv)).loadUrl("file:///android_asset/"+mItem.id+".html");
+            WebView wv = rootView.findViewById(R.id.badge_detail_wv);
+            wv.getSettings().setDefaultTextEncodingName("UTF-8");
+            wv.loadUrl("file:///android_asset/"+mItem.id+".html");
+
             ((ImageView) rootView.findViewById(R.id.imageViewDetailBadge)).setImageResource(mItem.resId);
         }
 
