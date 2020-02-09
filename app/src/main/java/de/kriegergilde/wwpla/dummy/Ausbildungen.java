@@ -32,18 +32,18 @@ public class Ausbildungen {
 
     static {
         // Add the badges
-        addItem(new Badge("seepferdchen", R.drawable.seepferdchen, "Frühschwimmer (Seepferdchen)"));
+        addItem(new Badge("seepferdchen", R.drawable.seepferdchen, "Anfängerzeugnis (Seepferdchen)"));
         addItem(new Badge("seeraeuber", R.drawable.seeraeuber, "Seeräuber"));
 
-        addItem(new Badge("djsa_bronze", R.drawable.djsa_bronze, "Jugendschwimmabzeichen in Bronze - Freischwimmer"));
-        addItem(new Badge("djsa_silber", R.drawable.djsa_silber, "Jugendschwimmabzeichen in Silber"));
-        addItem(new Badge("djsa_gold", R.drawable.djsa_gold, "Jugendschwimmabzeichen in Gold"));
+        //addItem(new Badge("djsa_bronze", R.drawable.djsa_bronze, "Jugendschwimmabzeichen in Bronze - Freischwimmer"));
+        //addItem(new Badge("djsa_silber", R.drawable.djsa_silber, "Jugendschwimmabzeichen in Silber"));
+        //addItem(new Badge("djsa_gold", R.drawable.djsa_gold, "Jugendschwimmabzeichen in Gold"));
 
         addItem(new Badge("schnorchel_ww", R.drawable.schnorchel_ww, "Schnorchelabzeichen (Wasserwacht)"));
 
-        addItem(new Badge("dsa_bronze", R.drawable.schwimm_bronze, "Schwimmabzeichen in Bronze - Freischwimmer"));
-        addItem(new Badge("dsa_silber", R.drawable.schwimm_silber, "Schwimmabzeichen in Silber"));
-        addItem(new Badge("dsa_gold", R.drawable.schwimm_gold, "Schwimmabzeichen in Gold"));
+        addItem(new Badge("dsa_bronze", R.drawable.djsa_bronze, "Schwimmabzeichen in Bronze"));
+        addItem(new Badge("dsa_silber", R.drawable.djsa_silber, "Schwimmabzeichen in Silber"));
+        addItem(new Badge("dsa_gold", R.drawable.djsa_gold, "Schwimmabzeichen in Gold"));
 
         addItem(new Badge("ersthelfer", R.drawable.ersthelfer, "Ersthelfer"));
 
