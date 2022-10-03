@@ -55,8 +55,6 @@ public class Ausbildungen {
         addItem(new Badge("totenkopf_090", R.drawable.totenkopf_090, "Stundenschwimmer 'Totenkopf' in Silber"));
         addItem(new Badge("totenkopf_120", R.drawable.totenkopf_120, "Stundenschwimmer 'Totenkopf' in Gold"));
 
-        //addItem(new Badge("schwimmen", R.drawable.schwimmen, "Fachdienst Schwimmen"));
-
         addItem(new Badge("san", R.drawable.san_b, "Sanitäter"));
 
         addItem(new Badge("sanitaetsdienst", R.drawable.sanitaetsdienst, "Fachdienst Sanitätswesen"));
@@ -74,6 +72,8 @@ public class Ausbildungen {
         addItem(new Badge("rettungssanitaeter", R.drawable.rettungssanitaeter, "Rettungssanitäter"));
 
         addItem(new Badge("sanitaetsdienst_ausbilder", R.drawable.sanitaetsdienst_ausbilder, "Ausbilder Sanitätsdienst"));
+
+        addItem(new Badge("ausbildungsassistent", R.drawable.schwimmen, "Ausbildungsassistent S+R"));
 
         addItem(new Badge("schwimmen_ausbilder", R.drawable.schwimmen_ausbilder, "Ausbilder Schwimmen"));
 
